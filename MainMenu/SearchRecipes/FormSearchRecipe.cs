@@ -88,7 +88,7 @@ namespace My_Menu
         //и если да, то не содержит ли он ПЖП (продуктов животного происхождения)
         private bool IsForVegan(Recipe recipe)
         {
-            return checkBoxVegan.Checked && recipe.IsVegan();
+            return checkBoxVegan.Checked && recipe.ingredients.IsVegan();
         }
 
         //метод для поялвения описания при наведении курсора на рецепт
