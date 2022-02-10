@@ -9,15 +9,17 @@ namespace My_Menu
 
         private void buttonGetRecipe_Click(object sender, EventArgs e)
         {
-            this.Hide(); //прячет это окно!!!!!!!!!!!!
+            this.Hide(); //это окно скрывается
             FormSearchRecipe formSearchRecipe = new FormSearchRecipe();
-            formSearchRecipe.Show(this); //передает это окно как родительское чтобы потом к нему можно было обращаться через owner
+            //это окно передаётся как родительское, чтобы потом к нему можно было обращаться через owner
+            formSearchRecipe.Show(this); 
         }
 
         private void buttonEditRecipes_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide(); //это окно скрывается
             FormEditRecipes formEditRecipes = new FormEditRecipes();
+            //это окно передаётся как родительское, чтобы потом к нему можно было обращаться через owner
             formEditRecipes.Show(this);
         }
     }
