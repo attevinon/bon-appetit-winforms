@@ -22,13 +22,13 @@ namespace My_Menu
         {
             labelName.Text = recipe.Name;
             textDescription.Text = recipe?.Description;
-            textCooking.Text = recipe?.Cooking;
+            textDirections.Text = recipe?.Directions;
 
             //печать ингредиентов рецепта
             recipe.ingredients.Print(textIngredients);
 
             // отображает соответсвующую надпись, если рецепт веганский
-            labelIsVegan.Visible = recipe.IsVegan();
+            labelIsVegan.Visible = recipe.ingredients.IsVegan();
         }
 
         private void FormThisRecipe_FormClosed(object sender, FormClosedEventArgs e)

@@ -21,7 +21,7 @@ namespace My_Menu
         //хранят информацию о том, есть ли неккоректно заполненные поля
         bool errorName = true; //изначально поле имени пустое
         bool errorDescription;
-        bool errorCooking;
+        bool errorDirections;
 
         Recipe recipe; //общий рецепт для всего окна
         public FormNewRecipe()
@@ -40,13 +40,13 @@ namespace My_Menu
             errorName = Notification.ErrorName(errorProviderName, textBoxName);
         private void textBoxDescription_TextChanged(object sender, EventArgs e) =>
             errorDescription = Notification.ErrorDescription(errorProviderDescription, textBoxDescription);
-        private void textBoxCooking_TextChanged(object sender, EventArgs e) =>
-            errorCooking = Notification.ErrorCooking(errorProviderCooking, textBoxCooking);
+        private void textBoxDirections_TextChanged(object sender, EventArgs e) =>
+            errorDirections = Notification.ErrorDirections(errorProviderDirections, textBoxDirections);
 
         //отмеченные ингредиенты присваиваются в состав блюда
         private void checkedListBoxMealIngredients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            recipe.ingredients?.Set(checkedListBoxMealIngredients, false);
+            recipe.ingredients?.Set(checkedListBoxMealIngredients, true);
             //проверка на отсутсвие отмеченных ингредиентов,
             //чтобы присвоить значение для переменной NoIngredients и в случае true показать предупреждение
             noIngredients = recipe.ingredients.IsCheckedNull(errorProviderIngredients, checkedListBoxMealIngredients);
@@ -57,6 +57,10 @@ namespace My_Menu
             FormNewIngredient formNewIngredient = new FormNewIngredient();
             formNewIngredient.ShowDialog();
             Ingredients.Refresh(checkedListBoxMealIngredients); //обновление списка ингредиентов
+            Ingredients.VeganChanged(checkBoxVegan, checkedListBoxMealIngredients);
+            recipe.ingredients?.Check(checkedListBoxMealIngredients);
+            
+            noIngredients = recipe.ingredients.IsCheckedNull(errorProviderIngredients, checkedListBoxMealIngredients);
         }
 
         //изменение списка отображаемых ингредиентов в зависимости от наличия отметки
@@ -69,14 +73,14 @@ namespace My_Menu
         private void buttonDone_Click(object sender, EventArgs e) 
         {
             //проверка на наличие ошибки(ок)
-            if (noIngredients || errorName || errorDescription || errorCooking)
+            if (noIngredients || errorName || errorDescription || errorDirections)
             {
                 Notification.MessageError(ref useClosingEvent, ref errorCought); //сообщение об ошибке
                 return; //прерывание сохранения
             }
 
             //в случае отсутсвия ошибок присвоение значений соотвествующим свойствам рецепта
-            recipe.NewInfo(textBoxName, textBoxDescription, textBoxCooking);
+            recipe.NewInfo(textBoxName, textBoxDescription, textBoxDirections);
 
             Recipe.RecipeLibrary.Add(recipe); //добавление рецепта в общий список для последующего его отображения
             MessageBox.Show("Рецепт добавлен!", MessageBoxName.MESSAGE, MessageBoxButtons.OK);
