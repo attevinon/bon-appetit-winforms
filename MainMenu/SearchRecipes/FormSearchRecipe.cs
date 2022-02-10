@@ -93,6 +93,8 @@ namespace My_Menu
 
         //метод для поялвения описания при наведении курсора на рецепт
         int hoveredIndex = -1; //изначальный индекс отсутсвия рецепта
+
+        #if DEBUG
         private void listBoxRecipes_MouseMove(object sender, MouseEventArgs e)
         {
             //новый индекс рецепта, где курсор остановился
@@ -109,6 +111,7 @@ namespace My_Menu
                 //если курсор не указывает ни на один рецепт, то ничего не происходит
             }
         }
+        # endif
 
         //меняет список отображаемых ингредиентов при изменении отметки в CheckBox
         private void checkBoxVegan_CheckedChanged(object sender, EventArgs e) 
