@@ -36,7 +36,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonChangeIngredients = new System.Windows.Forms.Button();
-            this.textBoxCooking = new System.Windows.Forms.TextBox();
+            this.textBoxDirections = new System.Windows.Forms.TextBox();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelCooking = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             this.panelEdit.Controls.Add(this.buttonCancel);
             this.panelEdit.Controls.Add(this.buttonSave);
             this.panelEdit.Controls.Add(this.buttonChangeIngredients);
-            this.panelEdit.Controls.Add(this.textBoxCooking);
+            this.panelEdit.Controls.Add(this.textBoxDirections);
             this.panelEdit.Controls.Add(this.textBoxDescription);
             this.panelEdit.Controls.Add(this.textBoxName);
             this.panelEdit.Controls.Add(this.labelCooking);
@@ -141,15 +141,15 @@
             this.buttonChangeIngredients.UseVisualStyleBackColor = false;
             this.buttonChangeIngredients.Click += new System.EventHandler(this.buttonChangeIngredients_Click);
             // 
-            // textBoxCooking
+            // textBoxDirections
             // 
-            this.textBoxCooking.Location = new System.Drawing.Point(28, 207);
-            this.textBoxCooking.Multiline = true;
-            this.textBoxCooking.Name = "textBoxCooking";
-            this.textBoxCooking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxCooking.Size = new System.Drawing.Size(265, 114);
-            this.textBoxCooking.TabIndex = 5;
-            this.textBoxCooking.TextChanged += new System.EventHandler(this.textBoxCooking_TextChanged);
+            this.textBoxDirections.Location = new System.Drawing.Point(28, 207);
+            this.textBoxDirections.Multiline = true;
+            this.textBoxDirections.Name = "textBoxDirections";
+            this.textBoxDirections.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDirections.Size = new System.Drawing.Size(265, 114);
+            this.textBoxDirections.TabIndex = 5;
+            this.textBoxDirections.TextChanged += new System.EventHandler(this.textBoxDirections_TextChanged);
             // 
             // textBoxDescription
             // 
@@ -246,7 +246,7 @@
         private Panel panelEdit;
         private Button buttonSave;
         private Button buttonChangeIngredients;
-        private TextBox textBoxCooking;
+        private TextBox textBoxDirections;
         private TextBox textBoxDescription;
         private TextBox textBoxName;
         private Label labelCooking;

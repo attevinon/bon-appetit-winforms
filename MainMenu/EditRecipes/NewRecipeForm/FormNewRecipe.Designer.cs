@@ -33,7 +33,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.checkBoxVegan = new System.Windows.Forms.CheckBox();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.textBoxCooking = new System.Windows.Forms.TextBox();
+            this.textBoxDirections = new System.Windows.Forms.TextBox();
             this.checkedListBoxMealIngredients = new System.Windows.Forms.CheckedListBox();
             this.labelIngredients = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,11 +44,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderDescription = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderCooking = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDirections = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderIngredients = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDescription)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCooking)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDirections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderIngredients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,15 +90,15 @@
             this.textBoxDescription.TabIndex = 3;
             this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
-            // textBoxCooking
+            // textBoxDirections
             // 
-            this.textBoxCooking.Location = new System.Drawing.Point(56, 256);
-            this.textBoxCooking.Multiline = true;
-            this.textBoxCooking.Name = "textBoxCooking";
-            this.textBoxCooking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxCooking.Size = new System.Drawing.Size(316, 149);
-            this.textBoxCooking.TabIndex = 4;
-            this.textBoxCooking.TextChanged += new System.EventHandler(this.textBoxCooking_TextChanged);
+            this.textBoxDirections.Location = new System.Drawing.Point(56, 256);
+            this.textBoxDirections.Multiline = true;
+            this.textBoxDirections.Name = "textBoxDirections";
+            this.textBoxDirections.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDirections.Size = new System.Drawing.Size(316, 149);
+            this.textBoxDirections.TabIndex = 4;
+            this.textBoxDirections.TextChanged += new System.EventHandler(this.textBoxDirections_TextChanged);
             // 
             // checkedListBoxMealIngredients
             // 
@@ -194,9 +194,9 @@
             // 
             this.errorProviderDescription.ContainerControl = this;
             // 
-            // errorProviderCooking
+            // errorProviderDirections
             // 
-            this.errorProviderCooking.ContainerControl = this;
+            this.errorProviderDirections.ContainerControl = this;
             // 
             // errorProviderIngredients
             // 
@@ -215,7 +215,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelIngredients);
             this.Controls.Add(this.checkedListBoxMealIngredients);
-            this.Controls.Add(this.textBoxCooking);
+            this.Controls.Add(this.textBoxDirections);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.checkBoxVegan);
             this.Controls.Add(this.labelName);
@@ -228,7 +228,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormNewRecipe_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDescription)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDirections)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderIngredients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,7 +241,7 @@
         private Label labelName;
         private CheckBox checkBoxVegan;
         private TextBox textBoxDescription;
-        private TextBox textBoxCooking;
+        private TextBox textBoxDirections;
         private CheckedListBox checkedListBoxMealIngredients;
         private Label labelIngredients;
         private Label label1;
@@ -252,7 +252,7 @@
         private Panel panel1;
         private ErrorProvider errorProviderName;
         private ErrorProvider errorProviderDescription;
-        private ErrorProvider errorProviderCooking;
+        private ErrorProvider errorProviderDirections;
         private ErrorProvider errorProviderIngredients;
     }
 }

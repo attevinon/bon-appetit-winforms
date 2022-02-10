@@ -44,16 +44,16 @@ namespace My_Menu
         }
 
         //значение по умолчанию для приготовления
-        public const string DEFAULT_NO_COOKING = "Нет информации о приготовлении блюда.";
-        internal const int COOKING_LENGTH = 30000;
-        private string? cooking;
-        public string? Cooking //приготовление блюда
+        public const string DEFAULT_NO_DIRECTIONS = "Нет информации о приготовлении блюда.";
+        internal const int DIRECTIONS_LENGTH = 30000;
+        private string? directions;
+        public string? Directions //приготовление блюда
         {
-            get => cooking;
+            get => directions;
             set
             {
-                if (value?.Length < COOKING_LENGTH) //проверка на соответсвие максимальному кол-ву символов
-                    cooking = value;
+                if (value?.Length < DIRECTIONS_LENGTH) //проверка на соответсвие максимальному кол-ву символов
+                    directions = value;
                 else
                     throw new Exception();
             }
@@ -67,15 +67,15 @@ namespace My_Menu
             //если в инициализаторе не указаны значения для свойств Description и Cooking,
             //то им присваивается значение по умолчанию
             Description = DEFAULT_DESCRIPTION; 
-            Cooking = DEFAULT_NO_COOKING;
+            Directions = DEFAULT_NO_DIRECTIONS;
         }
 
         //присоение свойствам значений, введённых с клавиатуры
-        public void NewInfo(TextBox newName,TextBox newDescription, TextBox newCooking) 
+        public void NewInfo(TextBox newName,TextBox newDescription, TextBox newDirections) 
         {
             Name = newName.Text;
             Description = newDescription.Text ?? DEFAULT_DESCRIPTION;
-            Cooking = newCooking.Text ?? DEFAULT_NO_COOKING;
+            Directions = newDirections.Text ?? DEFAULT_NO_DIRECTIONS;
         }
 
         //обновление списка рецептов в некотором ListBox

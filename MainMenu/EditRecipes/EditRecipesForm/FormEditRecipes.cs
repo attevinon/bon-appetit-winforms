@@ -25,7 +25,7 @@ namespace My_Menu
         //хранят информацию о том, есть ли неккоректно заполненные поля
         bool errorName;
         bool errorDescription;
-        bool errorCooking;
+        bool errorDirections;
         public FormEditRecipes()
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace My_Menu
             if (panelEdit.Visible 
                 &&(textBoxName?.Text != recipe?.Name
                 || textBoxDescription?.Text != recipe?.Description
-                || textBoxCooking?.Text != recipe?.Cooking)) 
+                || textBoxDirections?.Text != recipe?.Directions)) 
             { 
                 if (Notification.IsSave(recipe)) //IsSave возвращает результат вопроса о сохранении
                     SaveChanges(); //если ответ положительный, то рецепт сохраняется
@@ -69,7 +69,7 @@ namespace My_Menu
             //текстовым полям присваиваются соответсвующие значения свойств рецепта
             textBoxName.Text = recipe.Name;
             textBoxDescription.Text = recipe?.Description;
-            textBoxCooking.Text = recipe?.Cooking;
+            textBoxDirections.Text = recipe?.Directions;
 
             //начальный состав рецепта копируется в массив объектов
             starterIngredients = recipe.ingredients.Copy();
@@ -109,8 +109,8 @@ namespace My_Menu
             errorName = Notification.ErrorName(errorProviderName, textBoxName);
         private void textBoxDescription_TextChanged(object sender, EventArgs e) =>
             errorDescription = Notification.ErrorDescription(errorProviderDescription, textBoxDescription);
-        private void textBoxCooking_TextChanged(object sender, EventArgs e) =>
-            errorCooking = Notification.ErrorCooking(errorProviderCooking, textBoxCooking);
+        private void textBoxDirections_TextChanged(object sender, EventArgs e) =>
+            errorDirections = Notification.ErrorDirections(errorProviderCooking, textBoxDirections);
 
         //нажатие кнопки "Сохранить" сохраняет внесённые изменения
         private void buttonSave_Click(object sender, EventArgs e)
@@ -137,14 +137,14 @@ namespace My_Menu
         private void SaveChanges()
         {
             //проверка на наличие ошибки(ок)
-            if (noIngredients || errorName ||  errorDescription || errorCooking)
+            if (noIngredients || errorName ||  errorDescription || errorDirections)
             {
                 Notification.MessageError(ref useClosingEvent); //сообщение об ошибке
                 return; //прерывание метода
             }
 
             //в случае отсутсвия ошибок присвоение значений соотвествующим свойствам рецепта
-            recipe.NewInfo(textBoxName, textBoxDescription, textBoxCooking);
+            recipe.NewInfo(textBoxName, textBoxDescription, textBoxDirections);
 
             Notification.MessageSaved(); //сообщение об успешном сохранении
             Recipe.Refresh(listboxMyRecipes); //обновление списка рецептов

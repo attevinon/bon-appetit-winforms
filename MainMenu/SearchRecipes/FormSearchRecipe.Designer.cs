@@ -119,7 +119,7 @@
             this.Controls.Add(this.checkedListBoxIngredients);
             this.MaximizeBox = false;
             this.Name = "FormSearchRecipe";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поиск рецептов";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSearchRecipe_FormClosed);
             this.ResumeLayout(false);

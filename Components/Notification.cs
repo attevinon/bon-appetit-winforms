@@ -39,9 +39,9 @@ namespace My_Menu
         {
             return ErrorMaxLength(errorProviderDescription, textBoxDescription, MESSAGES.MAX_DISCRIPTION_LENGTH, Recipe.DESCRIPTION_LENGTH, false);
         }
-        public static bool ErrorCooking(ErrorProvider errorProviderCooking, TextBox textBoxCooking)
+        public static bool ErrorDirections(ErrorProvider errorProviderCooking, TextBox textBoxCooking)
         {
-            return ErrorMaxLength(errorProviderCooking, textBoxCooking, MESSAGES.MAX_COOKING_LENGTH, Recipe.COOKING_LENGTH, false);
+            return ErrorMaxLength(errorProviderCooking, textBoxCooking, MESSAGES.MAX_COOKING_LENGTH, Recipe.DIRECTIONS_LENGTH, false);
         }
 
         //показывает уведомление о некорректном вводе данных 

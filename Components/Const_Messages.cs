@@ -20,7 +20,7 @@ namespace My_Menu
         public const string NO_NAME = "Это поле обязательно к заполнению.";
 
         static public readonly string MAX_DISCRIPTION_LENGTH = $"Максимальная длинна описания {Recipe.DESCRIPTION_LENGTH} символов";
-        static public readonly string MAX_COOKING_LENGTH = $"Максимальная длинна описания приготовления {Recipe.COOKING_LENGTH} символов";
+        static public readonly string MAX_COOKING_LENGTH = $"Максимальная длинна описания приготовления {Recipe.DIRECTIONS_LENGTH} символов";
         static public readonly string MAX_NAME_LENGTH = $"Максимальная длинна названия {Recipe.NAME_LENGTH} символов";
 
         public const string EXIT_RECIPE = "Вы уверены, что хотите уйти?\nРецепт НЕ будет сохранён!";

@@ -32,7 +32,7 @@
             this.labelIngredients = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelIsVegan = new System.Windows.Forms.Label();
-            this.textCooking = new System.Windows.Forms.TextBox();
+            this.textDirections = new System.Windows.Forms.TextBox();
             this.labelCooking = new System.Windows.Forms.Label();
             this.textIngredients = new System.Windows.Forms.Label();
             this.textDescription = new System.Windows.Forms.Label();
@@ -85,19 +85,20 @@
             this.labelIsVegan.TabIndex = 4;
             this.labelIsVegan.Text = "Подходит для веганов!";
             // 
-            // textCooking
+            // textDirections
             // 
-            this.textCooking.BackColor = System.Drawing.Color.Ivory;
-            this.textCooking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textCooking.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textCooking.Location = new System.Drawing.Point(345, 64);
-            this.textCooking.MaxLength = 30000;
-            this.textCooking.Multiline = true;
-            this.textCooking.Name = "textCooking";
-            this.textCooking.ReadOnly = true;
-            this.textCooking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textCooking.Size = new System.Drawing.Size(296, 343);
-            this.textCooking.TabIndex = 7;
+            this.textDirections.BackColor = System.Drawing.Color.Ivory;
+            this.textDirections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textDirections.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textDirections.Location = new System.Drawing.Point(345, 64);
+            this.textDirections.MaxLength = 30000;
+            this.textDirections.Multiline = true;
+            this.textDirections.Name = "textDirections";
+            this.textDirections.ReadOnly = true;
+            this.textDirections.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textDirections.Size = new System.Drawing.Size(296, 343);
+            this.textDirections.TabIndex = 7;
+            this.textDirections.TabStop = false;
             // 
             // labelCooking
             // 
@@ -154,13 +155,14 @@
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(694, 456);
             this.Controls.Add(this.labelCooking);
-            this.Controls.Add(this.textCooking);
+            this.Controls.Add(this.textDirections);
             this.Controls.Add(this.labelIsVegan);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.Name = "FormThisRecipe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Рецепт";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormThisRecipe_FormClosed);
             this.panel1.ResumeLayout(false);
@@ -178,7 +180,7 @@
         private Label labelIngredients;
         private Label labelDescription;
         private Label labelIsVegan;
-        private TextBox textCooking;
+        private TextBox textDirections;
         private Label labelCooking;
         private Label textIngredients;
         private Label textDescription;
