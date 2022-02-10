@@ -24,6 +24,7 @@ By the way you can even add new ingredients and mark them vegan if they are.
 
 ### Edditing recipes which already exist
 ![editing-recipe](https://i.imgur.com/dnzQuGA.gif)
+
 And if here're any mistakes in recipes you can correct them.
 Or maybe write something new about them!
 
