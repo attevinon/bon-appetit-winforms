@@ -6,8 +6,6 @@ My first WinForms project!
 
 - Visual Studio 2022
 - .NET Framework (6.0)
-- C# (10.0)
-- Windows 7
 
 ## Features
 ### Recipe search
